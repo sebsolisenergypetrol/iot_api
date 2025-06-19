@@ -46,8 +46,6 @@ This document defines the functional and technical requirements for the Backend 
   * Bearer token support for mobile clients.
   * Role-based access control using `@Roles()` decorator and `RolesGuard`.
 
-### Features
-
 #### 1. Authentication
 
 * Email/password login endpoint (`POST /auth/login`)
