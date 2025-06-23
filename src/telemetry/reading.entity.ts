@@ -1,9 +1,10 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
+import { Entity, PrimaryColumn, Column, ManyToOne, Generated } from 'typeorm';
 import { Device } from '../devices/device.entity';
 
 @Entity('readings')
 export class Reading {
-  @PrimaryGeneratedColumn('uuid')
+  @PrimaryColumn('uuid')
+  @Generated('uuid')
   id: string;
 
   @ManyToOne(() => Device, (device) => device.readings, { eager: true })
@@ -12,6 +13,6 @@ export class Reading {
   @Column({ type: 'jsonb' })
   value: any;
 
-  @Column({ type: 'timestamptz' })
+  @PrimaryColumn({ type: 'timestamptz' })
   timestamp: Date;
 } 
